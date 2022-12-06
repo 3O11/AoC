@@ -12,3 +12,6 @@ set_property(TARGET Day4 PROPERTY CXX_STANDARD 20)
 
 add_executable(Day5 "day5.cpp")
 set_property(TARGET Day5 PROPERTY CXX_STANDARD 20)
+
+add_executable(Day6 "day6.cpp")
+set_property(TARGET Day6 PROPERTY CXX_STANDARD 20)
