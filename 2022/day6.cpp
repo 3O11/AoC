@@ -2,32 +2,31 @@
 #include <fstream>
 #include <cstdint>
 
-int main()
+int64_t findUniqueSubstr(const std::string& str, int64_t length)
 {
-    constexpr int64_t window = 14;
-    std::string line;
-    std::ifstream input("../../2022/inputs/day6.txt");
-    std::getline(input, line);
-    input.close();
-
-    for (int64_t i = window - 1; i < line.length(); ++i)
-    {
+    for (int64_t i = length - 1; i < str.length(); ++i) {
         bool unique = true;
-        for (int64_t j = 0; j < window; ++j)
-        {
-            for (int64_t k = j + 1; k < window; ++k)
-            {
-                if (line[i - j] == line[i - k])
-                {
+        for (int64_t j = 0; j < length && unique; ++j) {
+            for (int64_t k = j + 1; k < length; ++k) {
+                if (str[i - j] == str[i - k]) {
                     unique = false;
                     break;
                 }
             }
         }
-        if (unique)
-        {
-            std::cout << i + 1 << "\n";
-            return 0;
+        if (unique) {
+            return i + 1;   
         }
     }
+    return -1;
+}
+
+int main()
+{
+    std::string line;
+    std::ifstream input("../../2022/inputs/day6.txt");
+    std::getline(input, line);
+    input.close();
+    std::cout << findUniqueSubstr(line, 4) << "\n";
+    std::cout << findUniqueSubstr(line, 14) << "\n";
 }
