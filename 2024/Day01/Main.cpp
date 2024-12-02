@@ -35,7 +35,7 @@ int main()
     ranges::sort(right);
 
     std::int32_t result1 = ranges::fold_left(views::zip(left, right)
-                         | views::transform([](const auto& pair) { return std::abs(pair.first - pair.second); }),
+                         | views::transform([](const auto& pair) { return std::abs(std::get<0>(pair) - std::get<1>(pair)); }),
                          0, std::plus<std::int32_t>());
 
     auto similarityScore = [&right](auto lnum) {
