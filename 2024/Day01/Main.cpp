@@ -1,7 +1,6 @@
 #include "InputGetter.hpp"
 
 #include <algorithm>
-#include <cstdlib>
 #include <print>
 #include <ranges>
 #include <utility>
