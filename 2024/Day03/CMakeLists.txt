@@ -1,3 +1,4 @@
+include(${PROJECT_SOURCE_DIR}/CMake/ctre.cmake)
 
 add_executable(2024D03 "Main.cpp")
 
@@ -9,4 +10,5 @@ target_compile_features(2024D03
 target_link_libraries(2024D03
     PRIVATE
     AoC_2024_Common
+    ctre
 )
