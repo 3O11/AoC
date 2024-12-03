@@ -1,4 +1,3 @@
-include(${PROJECT_SOURCE_DIR}/CMake/cpr.cmake)
 
 add_executable(2024D03 "Main.cpp")
 

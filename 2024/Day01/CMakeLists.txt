@@ -1,5 +1,3 @@
-include(${PROJECT_SOURCE_DIR}/CMake/cpr.cmake)
-
 add_executable(2024D01 "Main.cpp")
 
 target_compile_features(2024D01
