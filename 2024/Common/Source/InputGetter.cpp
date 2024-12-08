@@ -8,7 +8,6 @@
 #include <fstream>
 #include <iterator>
 #include <optional>
-#include <sstream>
 #include <system_error>
 
 namespace AOC2024
@@ -59,9 +58,10 @@ namespace AOC2024
                 return std::nullopt;
             }
 
-            std::stringstream inputBuffer;
-            inputBuffer << inputCache.rdbuf();
-            return inputBuffer.str();
+            return std::string(
+                std::istreambuf_iterator<char>(inputCache),
+                std::istreambuf_iterator<char>{}
+            );
         }
     }
 
